@@ -12,7 +12,7 @@ def runVision():
     ballLR = 0.50
     isBall = True
     # Slowly oscliate between left and right
-    ballLR = math.sin(time.monotonic() / 2)
+    ballLR = abs(math.sin(time.monotonic() / 2))
     return ballLR, isBall
 
 
