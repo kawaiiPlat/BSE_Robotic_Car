@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
-#GPIO Basic initialization
+
+# Call cleanup at the start to purge any other sessions effects
+GPIO.cleanup()
 # BCM means that you use the names of the GPIO pin numbers, not the actual pin numbers (e.g. use 3, aka GPIO3, for the pin at pin pos 5 from pinout)
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -28,8 +30,6 @@ class Motor():
             self.__setPins(0,1)
 
 if __name__ == "__main__":
-    # Call cleanup at the start to purge any other sessions effects
-    GPIO.cleanup()
     m = Motor(3, 4)
     
     # No pins high
