@@ -1,7 +1,9 @@
 import motor as m
 
 class Robot:
-    def __init__(self, mA_1: int = 31, mA_2: int = 33, mB_1: int = 35, mB_2: int = 37):
+    # will cause rpi to hang if invalid numbers are used, see motors.py to learn more
+    # TLDR is to use the correct numbered GPIO pin numbers
+    def __init__(self, mA_1: int = 3, mA_2: int = 4, mB_1: int = 17, mB_2: int = 27):
         self.mA = m.Motor(mA_1, mA_2)
         self.mB = m.Motor(mB_1, mB_2)
         
