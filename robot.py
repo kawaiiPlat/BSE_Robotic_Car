@@ -21,3 +21,25 @@ class Robot:
 
     def stop(self) -> None:
         self.__motorSpeed(0.0, 0.0)
+
+if __name__ == "__main__":
+    r = Robot(3,4,17,27)
+
+    r.stop()
+    input("stopped, press enter")
+
+    # No pins high
+    r.straight(1.0)
+    input("straight, press enter")
+
+    r.straight(-1.0)
+    input("Straight back, press enter")
+
+    r.turn(1.0)
+    input("Turning towards motor A, press enter")
+
+    r.turn(-1.0)
+    input("Turning towards motor B, press enter")
+
+    r.stop()
+    input("stopped, press enter")
