@@ -4,6 +4,13 @@ class Robot:
     def __init__(self, mA_1: int = 31, mA_2: int = 33, mB_1: int = 35, mB_2: int = 37):
         self.mA = m.Motor(mA_1, mA_2)
         self.mB = m.Motor(mB_1, mB_2)
+        
+        # dependant on wire config
+        # change the wires, not the code
+        self.left = -1.0
+        self.right = 1.0
+        self.forwards = -1.0
+        self.backwards = 1.0
     
     def __motorSpeed(self, mA_speed: float, mB_speed: float) -> None:
         self.mA.setSpeed(mA_speed)
